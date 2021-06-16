@@ -11,13 +11,4 @@ export default class BaseService {
             baseURL: "https://api.github.com/"
         });
     }
-
-    async getOne() {
-        try {
-            const response = await this.connection.get(this.endpoint);
-            return { response, data: response.data };
-        } catch (err) {
-            throw { response: err.response, data: err.response.data };
-        }
-    }
 }
